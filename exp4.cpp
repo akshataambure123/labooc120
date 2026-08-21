@@ -5,18 +5,22 @@ using namespace std;
 
 class SavingAccount 
 {
-    private:
+    public:
     string accountHolderName;
     int accountNumber;
     double balance;
     double interestRate;
     public:
-    SavingAccount(string name, int accNumber, double initialBalance, double rate) {
+    SavingAccount(string name, int accNumber, double initialBalance, double rate) 
+    {
     accountHolderName = name;
     accountNumber = accNumber;
     balance = initialBalance;
     interestRate = rate;
-}
+    }
+
+    SavingAccount()
+    {}
 void deposit(double amount) 
 {
     if (amount > 0) 
@@ -52,6 +56,7 @@ void display()
     cout << "Interest Rate: " << interestRate << "%" << endl;
 }
 };
+
 // Checking Account Class
 class CheckingAccount
  {
@@ -59,6 +64,7 @@ class CheckingAccount
     string accountHolderName;
     int accountNumber;
     double balance;
+    SavingAccount s1;
 
     double transactionFee;
     public:
@@ -68,6 +74,11 @@ class CheckingAccount
         accountNumber = accNumber;
         balance = initialBalance;
         transactionFee = fee;
+        s1.accountHolderName = name;
+        s1.accountNumber = accNumber;
+        s1.balance = initialBalance;
+        s1.interestRate=7;
+        
     }
     void deposit(double amount) 
     {
@@ -90,29 +101,31 @@ void withdraw(double amount)
         cout << "Insufficient balance for withdrawal + fee!" << endl;
     }
 }
-void display() {
-
-cout << "\n[Checking Account]" << endl;
-cout << "Account Holder: " << accountHolderName << endl;
-cout << "Account Number: " << accountNumber << endl;
-cout << "Balance: ₹" << balance << endl;
-cout << "Transaction Fee: ₹" << transactionFee << endl;
+void display() 
+{
+    s1.display();
+    cout << "\n[Checking Account]" << endl;
+    cout << "Account Holder: " << accountHolderName << endl;
+    cout << "Account Number: " << accountNumber << endl;
+    cout << "Balance: ₹" << balance << endl;
+    cout << "Transaction Fee: ₹" << transactionFee << endl;
 }
 };
 // Main Function
-int main() {
-SavingAccount savings("Alice", 1001, 5000.0, 3.0);
-CheckingAccount checking("Bob", 1002, 3000.0, 20.0);
-// Operations on Savings Account
-savings.display();
-savings.deposit(1000);
-savings.withdraw(2000);
-savings.applyInterest();
-savings.display();
-// Operations on Checking Account
-checking.display();
-checking.deposit(1500);
-checking.withdraw(1000);
-checking.display();
-return 0;
+int main() 
+{
+    SavingAccount savings("Alice", 1001, 5000.0, 3.0);
+    CheckingAccount checking("Bob", 1002, 3000.0, 20.0);
+    // Operations on Savings Account
+    savings.display();
+    savings.deposit(1000);
+    savings.withdraw(2000);
+    savings.applyInterest();
+    savings.display();
+    // Operations on Checking Account
+    checking.display();
+    checking.deposit(1500);
+    checking.withdraw(1000);
+    checking.display();
+    return 0;
 }
