@@ -16,9 +16,9 @@ int main()
 
     cout<<"1.2 History of C++"<<"\n"<<"C++ was developed by Bjarne Stroustrup at Bell Laboratories.In 1979, Bjarne Stroustrup started developing a language called C with Classes. It was designed to combine the efficiency of C with the features of object-oriented programming.In 1983, the language was renamed C++. The name C++ comes from the increment operator ++ in C, indicating an improvement over C.C++ became an internationally standardized programming language in 1998 with the C++98 standard. Modern versions of C++ provide additional features that make programming safer, more efficient, and easier to maintain.";
     cout<<"1.3 Why is C++ Important?"<<"\n"<<"C++ is important because it provides:"<<"\n"<<"High performance: It can execute programs efficiently and is suitable for performance-critical applications.Object-oriented programming: It allows programmers to organize programs using classes and objects.Code reusability: Features such as inheritance allow programmers to reuse existing code. Data security: Encapsulation and access specifiers help control access to data.Portability: C++ programs can be compiled for different platforms, although platform-specific code may require modifications.Memory management: It provides facilities for managing memory directly and indirectly.Flexibility: It supports procedural, object-oriented, and generic programming.";*/
-    //-------------------------end of theory------------------------------
+ 
 
-/*1.4 Features of C++
+ cout << R"(1.4 Features of C++
 1. Object-Oriented Programming
 
 C++ supports object-oriented programming, which organizes programs around classes and objects.
@@ -88,10 +88,10 @@ try
 throw
 catch
 
-These facilities help programmers handle exceptional situations.*/
+These facilities help programmers handle exceptional situations.)";
 
     cout<<"10. Generic Programming"<<"\n"<<"C++ supports templates, which allow programmers to write reusable functions and classes that work with different data types.";
-  
+ //-------------------------end of theory------------------------------
 //--------------------------------------------real code----------------------------------
     class Student
     {
